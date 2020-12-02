@@ -1,33 +1,27 @@
-﻿using System.IO;
-using System.Linq;
+﻿using System.Linq;
 
 namespace AdventOfCode2020
 {
-    public class Day1
+    public sealed class Day1 : DayBase<int[]>
     {
-        private readonly int[] _numbers;
+        protected override int[] ProcessInput(string[] rawInput) => rawInput.Select(int.Parse).ToArray();
 
-        public Day1()
-        {
-            var input = File.ReadAllLines("input.txt");
-            var numbers = input.Select(int.Parse).ToArray();
-            _numbers = numbers;
-        }
+        public Day1() => Input = ProcessInput(ReadInput());
 
-        public int Part1()
+        public override int Part1()
         {
-            foreach (var x in _numbers)
-                if (_numbers.Contains(2020 - x))
+            foreach (var x in Input)
+                if (Input.Contains(2020 - x))
                     return x * (2020 - x);
 
             return -1;
         }
 
-        public int Part2()
+        public override int Part2()
         {
-            foreach (var x in _numbers)
-            foreach (var y in _numbers)
-                if (_numbers.Contains(2020 - x - y))
+            foreach (var x in Input)
+            foreach (var y in Input)
+                if (Input.Contains(2020 - x - y))
                     return x * y * (2020 - x - y);
 
             return -1;
