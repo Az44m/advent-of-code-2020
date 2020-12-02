@@ -5,9 +5,10 @@ namespace AdventOfCode2020
 {
     public sealed class Day1 : DayBase<int[]>
     {
-        protected override int[] ProcessInput(List<string> rawInput) => rawInput.Select(int.Parse).ToArray();
+        protected override int Day { get; } = 1;
+        public Day1() => Input = ProcessInput(ReadInput());
 
-        public Day1() => Input = ProcessInput(ReadInput(1));
+        protected override int[] ProcessInput(List<string> rawInput) => rawInput.Select(int.Parse).ToArray();
 
         public override int Part1()
         {

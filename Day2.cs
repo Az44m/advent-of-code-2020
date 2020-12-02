@@ -14,7 +14,8 @@ namespace AdventOfCode2020
 
     public sealed class Day2 : DayBase<PasswordCheck[]>
     {
-        public Day2() => Input = ProcessInput(ReadInput(2));
+        protected override int Day { get; } = 2;
+        public Day2() => Input = ProcessInput(ReadInput());
 
         protected override PasswordCheck[] ProcessInput(List<string> rawInput)
         {
