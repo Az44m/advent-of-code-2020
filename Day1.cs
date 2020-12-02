@@ -1,12 +1,13 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace AdventOfCode2020
 {
     public sealed class Day1 : DayBase<int[]>
     {
-        protected override int[] ProcessInput(string[] rawInput) => rawInput.Select(int.Parse).ToArray();
+        protected override int[] ProcessInput(List<string> rawInput) => rawInput.Select(int.Parse).ToArray();
 
-        public Day1() => Input = ProcessInput(ReadInput());
+        public Day1() => Input = ProcessInput(ReadInput(1));
 
         public override int Part1()
         {

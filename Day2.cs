@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AdventOfCode2020
@@ -13,9 +14,9 @@ namespace AdventOfCode2020
 
     public sealed class Day2 : DayBase<PasswordCheck[]>
     {
-        public Day2() => Input = ProcessInput(ReadInput());
+        public Day2() => Input = ProcessInput(ReadInput(2));
 
-        protected override PasswordCheck[] ProcessInput(string[] rawInput)
+        protected override PasswordCheck[] ProcessInput(List<string> rawInput)
         {
             return rawInput
                 .Select(inputRow =>
