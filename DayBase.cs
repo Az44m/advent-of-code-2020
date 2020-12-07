@@ -18,7 +18,7 @@ namespace AdventOfCode2020
 
         protected List<string> ReadInput()
         {
-            var fileLines = File.ReadLines("input.txt").ToList();
+            var fileLines = File.ReadLines( "input.txt").ToList();
             if (fileLines.Any())
                 return fileLines.ToList();
 
