@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace AdventOfCode2020
@@ -12,26 +11,7 @@ namespace AdventOfCode2020
 
         public Day4() => Input = ProcessInput(ReadInput());
 
-        protected override List<string> ProcessInput(List<string> rawInput)
-        {
-            var passports = new List<string>();
-            var passportBuilder = new StringBuilder();
-
-            foreach (var row in rawInput)
-            {
-                if (row != string.Empty)
-                {
-                    passportBuilder.Append($" {row}");
-                }
-                else
-                {
-                    passports.Add(passportBuilder.ToString().Trim());
-                    passportBuilder.Clear();
-                }
-            }
-
-            return passports;
-        }
+        protected override List<string> ProcessInput(List<string> rawInput) => Utils.ConcatGroupOfLines(rawInput, " ", string.Empty);
 
         public override int Part1() => CountValidPassports((_, __) => true);
 
