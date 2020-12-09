@@ -10,9 +10,9 @@ namespace AdventOfCode2020
         public Day5() => Input = ProcessInput(ReadInput());
         protected override List<string> ProcessInput(List<string> rawInput) => rawInput;
 
-        public override int Part1() => CalculateSeatIds().Max();
+        public override long Part1() => CalculateSeatIds().Max();
 
-        public override int Part2()
+        public override long Part2()
         {
             var orderedIds = CalculateSeatIds().OrderBy(id => id).ToArray();
             for (var i = 0; i < orderedIds.Length; i++)

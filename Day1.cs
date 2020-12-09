@@ -10,7 +10,7 @@ namespace AdventOfCode2020
 
         protected override int[] ProcessInput(List<string> rawInput) => rawInput.Select(int.Parse).ToArray();
 
-        public override int Part1()
+        public override long Part1()
         {
             foreach (var x in Input)
                 if (Input.Contains(2020 - x))
@@ -19,7 +19,7 @@ namespace AdventOfCode2020
             return -1;
         }
 
-        public override int Part2()
+        public override long Part2()
         {
             foreach (var x in Input)
             foreach (var y in Input)

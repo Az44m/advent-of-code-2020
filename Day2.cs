@@ -34,7 +34,7 @@ namespace AdventOfCode2020
                 .ToArray();
         }
 
-        public override int Part1()
+        public override long Part1()
         {
             return CountValidPasswords((min, max, password, charToCheck) =>
             {
@@ -43,7 +43,7 @@ namespace AdventOfCode2020
             });
         }
 
-        public override int Part2()
+        public override long Part2()
         {
             return CountValidPasswords((min, max, password, charToCheck) =>
             {

@@ -11,12 +11,12 @@ namespace AdventOfCode2020
 
         protected override List<string> ProcessInput(List<string> rawInput) => Utils.ConcatGroupOfLines(rawInput, ",", string.Empty);
 
-        public override int Part1()
+        public override long Part1()
         {
             return Input.Sum(word => word.ToHashSet().Count - 1);
         }
 
-        public override int Part2()
+        public override long Part2()
         {
             return Input.Sum(word =>
             {

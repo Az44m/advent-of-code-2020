@@ -50,7 +50,7 @@ namespace AdventOfCode2020
             return bagRuleMap;
         }
 
-        public override int Part1()
+        public override long Part1()
         {
             var bagsToCheck = new List<string> {"shiny gold"};
             var resultList = new HashSet<string>();
@@ -67,7 +67,7 @@ namespace AdventOfCode2020
             return resultList.Count - 1;
         }
 
-        public override int Part2()
+        public override long Part2()
         {
             var bagsToCheck = new Dictionary<string, int> {{"shiny gold", 1}};
             var result = 0;

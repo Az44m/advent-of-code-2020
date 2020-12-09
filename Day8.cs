@@ -6,12 +6,14 @@ namespace AdventOfCode2020
     public sealed class Day8 : DayBase<List<string>>
     {
         protected override int Day { get; } = 8;
+
         public Day8() => Input = ProcessInput(ReadInput());
+
         protected override List<string> ProcessInput(List<string> rawInput) => rawInput;
 
-        public override int Part1() => RunInstructions(out _);
+        public override long Part1() => RunInstructions(out _);
 
-        public override int Part2()
+        public override long Part2()
         {
             var visitedIndexes = new HashSet<int>();
             for (var i = 0; i < Input.ToList().Count; i++)

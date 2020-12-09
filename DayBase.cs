@@ -13,8 +13,8 @@ namespace AdventOfCode2020
         protected T Input { get; set; }
         protected abstract int Day { get; }
         protected abstract T ProcessInput(List<string> rawInput);
-        public abstract int Part1();
-        public abstract int Part2();
+        public abstract long Part1();
+        public abstract long Part2();
 
         protected List<string> ReadInput()
         {
@@ -54,7 +54,7 @@ namespace AdventOfCode2020
             return lines;
         }
 
-        public void SubmitAnswer(int level, int answer)
+        public void SubmitAnswer(int level, long answer)
         {
             var request = (HttpWebRequest) WebRequest.Create($"https://adventofcode.com/2020/day/{Day}/answer");
 

@@ -12,9 +12,9 @@ namespace AdventOfCode2020
 
         protected override List<string> ProcessInput(List<string> rawInput) => rawInput;
 
-        public override int Part1() => CountTrees(new Point(3, 1));
+        public override long Part1() => CountTrees(new Point(3, 1));
 
-        public override int Part2() => CountTrees(new Point(1, 1), new Point(3, 1), new Point(5, 1), new Point(7, 1), new Point(1, 2));
+        public override long Part2() => CountTrees(new Point(1, 1), new Point(3, 1), new Point(5, 1), new Point(7, 1), new Point(1, 2));
 
         private int CountTrees(params Point[] slopes)
         {
