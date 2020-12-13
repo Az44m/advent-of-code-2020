@@ -139,6 +139,14 @@ namespace AdventOfCode2020
             return count;
         }
 
+        public static (int, int) RotatePoint((int x, int y) point, float degrees)
+        {
+            var degreeInRadian = degrees * (Math.PI / 180);
+            var cos = Math.Cos(degreeInRadian);
+            var sin = Math.Sin(degreeInRadian);
+            return ((int)Math.Round(point.x * cos - point.y * sin), (int)Math.Round(point.x * sin + point.y * cos));
+        }
+
         public static void Print<T>(T item) where T : struct => Console.WriteLine($"{item}");
 
         public static void Print<T>(IEnumerable<T> list, string separator = ", ") => Console.WriteLine(string.Join(separator, list));
