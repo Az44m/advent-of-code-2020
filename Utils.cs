@@ -168,5 +168,33 @@ namespace AdventOfCode2020
             foreach ((T1 key, T2 value) in dictionary)
                 Console.WriteLine($"{key}, {string.Join(separator, value)}");
         }
+
+        //https://rosettacode.org/wiki/Chinese_remainder_theorem#C.23
+        public static class ChineseRemainderTheorem
+        {
+            public static long Solve(int[] n, int[] a)
+            {
+                var prod = n.Aggregate((long)1, (i, j) => i * j);
+                long sm = 0;
+
+                for (var i = 0; i < n.Length; i++)
+                {
+                    var p = prod / n[i];
+                    sm += a[i] * ModularMultiplicativeInverse(p, n[i]) * p;
+                }
+
+                return sm % prod;
+            }
+
+            private static long ModularMultiplicativeInverse(long a, long mod)
+            {
+                var b = a % mod;
+                for (var x = 1; x < mod; x++)
+                    if ((b * x) % mod == 1)
+                        return x;
+
+                return 1;
+            }
+        }
     }
 }
