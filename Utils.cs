@@ -147,6 +147,29 @@ namespace AdventOfCode2020
             return ((int)Math.Round(point.x * cos - point.y * sin), (int)Math.Round(point.x * sin + point.y * cos));
         }
 
+        public static List<string> GeneratePermutations(char[] input, int permutationLength)
+        {
+            return GenerateSubPermutations(input, "", input.Length, permutationLength, new List<string>());
+        }
+
+        private static List<string> GenerateSubPermutations(char[] input, String prefix, int inputLength, int permutationLength,
+            List<string> permutations)
+        {
+            if (permutationLength == 0)
+            {
+                permutations.Add(prefix);
+                return permutations;
+            }
+
+            for (var i = 0; i < inputLength; ++i)
+            {
+                var newPrefix = prefix + input[i];
+                permutations.AddRange(GenerateSubPermutations(input, newPrefix, inputLength, permutationLength - 1, new List<string>()));
+            }
+
+            return permutations;
+        }
+
         public static void Print<T>(T item) where T : struct => Console.WriteLine($"{item}");
 
         public static void Print<T>(IEnumerable<T> list, string separator = ", ") => Console.WriteLine(string.Join(separator, list));
