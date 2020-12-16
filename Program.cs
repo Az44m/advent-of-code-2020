@@ -6,7 +6,7 @@ namespace AdventOfCode2020
     {
         static void Main()
         {
-            var day = new Day15();
+            var day = new Day16();
 
             var part1 = day.Part1();
             var part2 = day.Part2();
