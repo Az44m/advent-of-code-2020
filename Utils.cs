@@ -172,12 +172,12 @@ namespace AdventOfCode2020
 
         public static void Print<T>(T item) where T : struct => Console.WriteLine($"{item}");
 
-        public static void Print<T>(IEnumerable<T> list, string separator = ", ") => Console.WriteLine(string.Join(separator, list));
+        public static void Print<T>(IEnumerable<T> list, string separator = "") => Console.WriteLine(string.Join(separator, list));
 
         public static void Print<T>(T[,] matrix)
         {
             for (var x = 0; x < matrix.GetLength(0); x++)
-                Print(Enumerable.Range(0, matrix.GetLength(1)).Select(y => matrix[x, y]).ToArray(), "");
+                Print(Enumerable.Range(0, matrix.GetLength(1)).Select(y => matrix[x, y]).ToArray());
         }
 
         public static void Print<T1, T2>(Dictionary<T1, T2> dictionary)
